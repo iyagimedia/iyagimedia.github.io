@@ -3,37 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Coming Soon - Iyagi Media</title>
+  <title>Iyagi Media</title>
   <style>
-    body {
-      background-color: #f7f7f7;
-      color: #333;
-      font-family: Arial, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
-    .container {
-      text-align: center;
-      max-width: 600px;
-      padding: 20px;
-    }
-    h1 {
-      font-size: 3em;
-      margin-bottom: 0.5em;
-    }
-    p {
-      font-size: 1.2em;
-      margin-bottom: 1em;
-    }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    nav { background: #333; color: #fff; padding: 1em; text-align: center; }
+    nav a { color: #fff; margin: 0 1em; text-decoration: none; }
+    section { padding: 2em; text-align: center; }
+    section img { max-width: 100%; height: auto; }
+    footer { background: #f7f7f7; padding: 1em; text-align: center; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Coming Soon</h1>
-    <p>Our website is under construction. Stay tuned for updates!</p>
-  </div>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#network">Our Network</a>
+    <a href="#contact">Contact Us</a>
+  </nav>
+
+  <section id="about">
+    <h1>About Iyagi Media</h1>
+    <p>Our mission is to foster meaningful conversations that bridge cultures through storytelling.</p>
+    <!-- Replace the src below with your exported Canva image for the About section -->
+    <img src="about.png" alt="About Iyagi Media">
+  </section>
+
+  <section id="network">
+    <h1>Our Network</h1>
+    <p>Discover our media properties, including the Korean American Podcast and more.</p>
+    <!-- Replace the src below with your exported Canva image for the Network section -->
+    <img src="network.png" alt="Our Network">
+  </section>
+
+  <section id="contact">
+    <h1>Contact Us</h1>
+    <p>Have questions or want to collaborate? Get in touch!</p>
+    <p><a href="mailto:contact@iyagimedia.com">contact@iyagimedia.com</a></p>
+    <!-- Optionally, include an image for your Contact section -->
+    <img src="contact.png" alt="Contact Iyagi Media">
+  </section>
+
+  <footer>
+    &copy; 2025 Iyagi Media. All rights reserved.
+  </footer>
+
 </body>
 </html>

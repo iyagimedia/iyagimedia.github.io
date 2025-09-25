@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://iyagimedia.github.io/sitemap.xml
+
+# Allow social media bots
+User-agent: facebookexternalhit/*
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /

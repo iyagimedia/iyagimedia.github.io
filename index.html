@@ -2,49 +2,304 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Iyagi Media</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iyagi media - Bridging Cultures Through Storytelling</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    nav { background: #333; color: #fff; padding: 1em; text-align: center; }
-    nav a { color: #fff; margin: 0 1em; text-decoration: none; }
-    section { padding: 2em; text-align: center; }
-    section img { max-width: 100%; height: auto; }
-    footer { background: #f7f7f7; padding: 1em; text-align: center; }
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header and Navigation */
+    header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+    
+    .logo {
+      color: white;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+    
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+    
+    .nav-links a:hover {
+      color: #f0f0f0;
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: white;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><path fill="%23667eea" fill-opacity="0.1" d="M0,192L48,208C96,224,192,256,288,245.3C384,235,480,181,576,181.3C672,181,768,235,864,229.3C960,224,1056,160,1152,149.3C1248,139,1344,181,1392,202.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    
+    .hero-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    
+    .hero-content p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+    
+    .cta-button {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 15px 30px;
+      border: 2px solid white;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+    
+    .cta-button:hover {
+      background: white;
+      color: #667eea;
+    }
+    
+    /* Sections */
+    section {
+      padding: 5rem 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      color: #333;
+    }
+    
+    .section-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    
+    .section-text h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #667eea;
+    }
+    
+    .section-text p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: #666;
+    }
+    
+    .section-image img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    /* Alternate section layout */
+    .section-reverse .section-content {
+      grid-template-columns: 1fr 1fr;
+    }
+    
+    /* Contact Section */
+    .contact {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+    
+    .contact-content {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .contact-info {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      margin-top: 2rem;
+    }
+    
+    .contact-info a {
+      color: #667eea;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Footer */
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 2rem 0;
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        gap: 1rem;
+      }
+      
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero-content p {
+        font-size: 1.1rem;
+      }
+      
+      .section-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#network">Our Network</a>
-    <a href="#contact">Contact Us</a>
-  </nav>
+  <header>
+    <nav class="container">
+      <a href="#" class="logo">iyagi media</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#network">Network</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>iyagi media</h1>
+      <p>Fostering meaningful conversations that bridge cultures through storytelling</p>
+      <a href="#about" class="cta-button">Discover Our Story</a>
+    </div>
+  </section>
 
   <section id="about">
-    <h1>About Iyagi Media</h1>
-    <p>Our mission is to foster meaningful conversations that bridge cultures through storytelling.</p>
-    <!-- Replace the src below with your exported Canva image for the About section -->
-    <img src="about.png" alt="About Iyagi Media">
+    <div class="container">
+      <div class="section-content">
+        <div class="section-text">
+          <h2>About iyagi media</h2>
+          <p>Our mission is to foster meaningful conversations that bridge cultures through storytelling. We believe that every story has the power to connect people across boundaries and create understanding in our diverse world.</p>
+          <p>Through our various media properties and initiatives, we amplify voices that might otherwise go unheard, creating platforms for authentic cultural exchange and dialogue.</p>
+        </div>
+        <div class="section-image">
+          <img src="about.png" alt="About iyagi media">
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section id="network">
-    <h1>Our Network</h1>
-    <p>Discover our media properties, including the Korean American Podcast and more.</p>
-    <!-- Replace the src below with your exported Canva image for the Network section -->
-    <img src="network.png" alt="Our Network">
+  <section id="network" class="section-reverse">
+    <div class="container">
+      <h2 class="section-title">Our Network</h2>
+      <div class="section-content">
+        <div class="section-image">
+          <img src="network.png" alt="Our Network">
+        </div>
+        <div class="section-text">
+          <h2>Media Properties</h2>
+          <p>Discover our growing network of media properties, including the Korean American Podcast and other innovative storytelling platforms.</p>
+          <p>Each property in our network is designed to celebrate cultural diversity while finding the common threads that unite us all as human beings.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section id="contact">
-    <h1>Contact Us</h1>
-    <p>Have questions or want to collaborate? Get in touch!</p>
-    <p><a href="mailto:contact@iyagimedia.com">contact@iyagimedia.com</a></p>
-    <!-- Optionally, include an image for your Contact section -->
-    <img src="contact.png" alt="Contact Iyagi Media">
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="contact-content">
+        <h2 class="section-title">Let's Connect</h2>
+        <p>Have questions or want to collaborate? We'd love to hear from you!</p>
+        <div class="contact-info">
+          <p>Ready to start a conversation?</p>
+          <a href="mailto:contact@iyagimedia.com">contact@iyagimedia.com</a>
+          <div style="margin-top: 2rem;">
+            <img src="contact.png" alt="Contact iyagi media" style="max-width: 300px; border-radius: 10px;">
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <footer>
-    &copy; 2025 Iyagi Media. All rights reserved.
+    <div class="container">
+      <p>&copy; 2025 iyagi media. All rights reserved.</p>
+    </div>
   </footer>
 
 </body>

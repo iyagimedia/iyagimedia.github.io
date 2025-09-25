@@ -90,13 +90,20 @@
     /* Hero Section */
     .hero {
       background: linear-gradient(rgba(0, 102, 204, 0.8), rgba(139, 90, 150, 0.8), rgba(205, 44, 44, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><path fill="%230066cc" fill-opacity="0.1" d="M0,192L48,208C96,224,192,256,288,245.3C384,235,480,181,576,181.3C672,181,768,235,864,229.3C960,224,1056,160,1152,149.3C1248,139,1344,181,1392,202.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
-      height: 100vh;
+      min-height: 70vh;
+      max-height: 600px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       color: white;
       position: relative;
+      padding: 6rem 0 4rem 0;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      padding: 0 2rem;
     }
     
     .hero-content h1 {
@@ -151,8 +158,6 @@
       height: auto;
       object-fit: contain;
       border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(0, 102, 204, 0.1);
-      background: white;
       padding: 20px;
     }
     
@@ -172,10 +177,8 @@
     }
     
     .mission-vision-combined {
-      background: white;
       padding: 2rem;
       border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     }
     
     .mission-vision-combined h3 {
@@ -312,8 +315,21 @@
     
     /* Mobile Responsive */
     @media (max-width: 768px) {
+      nav {
+        padding: 0.75rem 0;
+      }
+      
+      .logo img {
+        height: 32px;
+      }
+      
       .nav-links {
-        gap: 1rem;
+        gap: 0.75rem;
+      }
+      
+      .nav-links a {
+        font-size: 0.9rem;
+        padding: 0.25rem;
       }
       
       .hero-content h1 {
@@ -324,14 +340,38 @@
         font-size: 1.1rem;
       }
       
+      .hero {
+        min-height: 60vh;
+        max-height: 500px;
+        padding: 5rem 0 3rem 0;
+      }
+      
+      .hero-content {
+        padding: 0 1rem;
+      }
+      
       .section-content {
         grid-template-columns: 1fr;
         gap: 2rem;
       }
       
-      .about-content {
+      .section-reverse .section-content {
         grid-template-columns: 1fr;
         gap: 2rem;
+      }
+      
+      .section-reverse .section-image {
+        order: 1;
+      }
+      
+      .section-reverse .section-text {
+        order: 2;
+        text-align: center;
+      }
+      
+      .about-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
         text-align: center;
       }
       
@@ -345,8 +385,8 @@
       }
       
       .social-links {
-        flex-direction: column;
-        align-items: stretch;
+        justify-content: center;
+        gap: 1.5rem;
       }
       
       .social-link {
@@ -410,7 +450,7 @@
         </div>
         <div class="section-text">
             <h2>
-            <a href="https://koreanamericanpodcast.buzzsprout.com/" target="_blank" rel="noopener noreferrer" style="color: #cd2c2c; text-decoration: none;">
+            <a href="https://koreanamericanpodcast.buzzsprout.com/" target="_blank" rel="noopener noreferrer" style="color: #333; text-decoration: none;">
               Korean. American. Podcast
             </a>
             </h2>
